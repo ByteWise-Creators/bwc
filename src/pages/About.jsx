@@ -1,17 +1,9 @@
 import Scroller from "../components/Scroller";
+import ImgScroller from "../components/ImgScroller";
 import titleSvg from "../assets/Svg/title-svg.svg";
+import { aboutAnime } from "../assets/icons";
 
 const AboutUs = () => {
-  const services = [
-    "Android",
-    "iOS",
-    "Cross-Platform",
-    "Front-End",
-    "Backend",
-    "Full-Stack",
-    "UI/UX",
-  ];
-
   const typesOfApplications = [
     "Education",
     "Business Apps",
@@ -37,7 +29,7 @@ const AboutUs = () => {
   ];
 
   return (
-    <section id="about" className="py-20">
+    <section id="about" className="py-20 overflow-x-hidden">
       <div className="max-w-6xl mx-auto">
         {/* Title */}
         <div className="relative w-[70%] md:w-[40%] lg:w-[30%] xl:w-[22%] mx-auto text-center mb-12 w-c">
@@ -49,30 +41,30 @@ const AboutUs = () => {
             className="absolute h-[90px] w-[90px] top-[-25px] right-0"
           />
         </div>
-        <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:justify-between">
-          {/* Animation */}
-          <div className="w-full md:w-1/2 px-4 rounded-md">
+        {/* Animation */}
+        <div className="w-full flex justify-center items-center pt-4">
+          <div className="px-4 overflow-x-hidden max-w-820px">
             <Scroller items={typesOfApplications} className="sc-1" />
-            <Scroller items={services} direction="left" className="sc-2" />
+            <ImgScroller items={aboutAnime} direction="left" className="sc-2" />
             <Scroller items={typesOfWebsites} className="sc-3" />
           </div>
-          {/* Text Content */}
-          <div className="w-full md:w-1/2 mb-10 md:mb-0 px-4 text-justify">
-            <p className="text-base md:text-lg leading-relaxed font-para">
-              At ByteWise Creators, we specialize in transforming businesses
-              through cutting-edge digital solutions. Our team excels at
-              modernizing outdated systems and optimizing inefficient processes
-              to enhance operational efficiency. We design and implement custom
-              digital strategies that integrate the latest technology,
-              streamline workflows, and improve customer experiences.
-            </p>
-            <p className="text-base md:text-lg leading-relaxed mt-1 font-para">
-              By leveraging our expertise, we help businesses stay ahead of the
-              competition and unlock new growth opportunities. Partner with us
-              to revolutionize your digital landscape and drive success in a
-              rapidly evolving market.
-            </p>
-          </div>
+        </div>
+        {/* Text Content */}
+        <div className="w-full flex justify-center flex-col gap-2 md:gap-8 px-4 text-justify pt-8 overflow-x-hidden md:flex-row">
+          <p className="text-base md:text-lg leading-relaxed font-para basis-1/2">
+            At ByteWise Creators, we specialize in transforming businesses
+            through cutting-edge digital solutions. Our team excels at
+            modernizing outdated systems and optimizing inefficient processes to
+            enhance operational efficiency. We design and implement custom
+            digital strategies that integrate the latest technology, streamline
+            workflows, and improve customer experiences.
+          </p>
+          <p className="text-base md:text-lg leading-relaxed mt-1 font-para basis-1/2">
+            By leveraging our expertise, we help businesses stay ahead of the
+            competition and unlock new growth opportunities. Partner with us to
+            revolutionize your digital landscape and drive success in a rapidly
+            evolving market.
+          </p>
         </div>
       </div>
     </section>

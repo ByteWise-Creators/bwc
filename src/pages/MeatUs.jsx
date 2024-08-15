@@ -10,13 +10,13 @@ const MeatUs = () => {
   return (
     <section className="py-14">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="relative w-[70%] md:w-[75%] lg:w-[60%] xl:w-[50%] mx-auto text-center mb-16">
+        <div className="relative w-[90%] smm:w-[60%] sm:w-[45%] md:w-[32%] lg:w-[25%] xl:w-[28%] mx-auto text-center mb-16">
           <h1 className="text-5xl font-bold relative z-[1] font-heading">
             Meet our founders.
           </h1>
           <img
             src={titleSvg}
-            className="absolute h-[90px] w-[90px] top-[-20px] right-[30px]"
+            className="absolute h-[90px] w-[90px] top-[-20px] right-[10px]"
           />
         </div>
         <div className="flex flex-col sm:flex-row sm:justify-center sm:space-x-8">

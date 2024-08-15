@@ -68,6 +68,7 @@ const ServiceCard = ({ image = "", title, description, updateService }) => {
               initial="initial"
               animate="animate"
               exit="exit"
+              onClick={handleMouseLeave}
               transition={{ duration: 0.8, type: "spring", stiffness: 60 }}
             >
               <div className="theme-grad h-full w-full absolute top-0 left-0"></div>

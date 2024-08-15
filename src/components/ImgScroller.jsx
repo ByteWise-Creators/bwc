@@ -2,11 +2,7 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useRef, useState } from "react";
 
-const Scroller = ({
-  direction = "right",
-  items = ["HTML", "CSS", "JS", "SSG", "webdev", "animation", "UI/UX"],
-  className = "cn",
-}) => {
+const ImgScroller = ({ direction = "right", items = [], className = "cn" }) => {
   const scrollerRef = useRef(null);
   const [isAnimated, setIsAnimated] = useState(false);
 
@@ -39,9 +35,10 @@ const Scroller = ({
         {items.map((item, index) => (
           <li
             key={index}
-            className="bg-secondary font-heading px-3.5 py-1.5 rounded shadow-lg"
+            className="bg-secondary font-heading px-3.5 py-1.5 rounded shadow-lg flex gap-3 justify-center items-center"
           >
-            {item}
+            <img src={item.image} className="size-5" alt="" />
+            <span>{item.title}</span>
           </li>
         ))}
       </ul>
@@ -49,4 +46,4 @@ const Scroller = ({
   );
 };
 
-export default Scroller;
+export default ImgScroller;

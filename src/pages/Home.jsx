@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { BlurText } from "../animatedComponents/BlutText";
 import heroSvg from "../assets/Svg/ByteWiseCreaters-hero.svg";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const Home = () => {
   const texts = [
@@ -52,9 +53,9 @@ const Home = () => {
           Empowering Your Business with Innovative Tech and Seamless Digital
           Experiences
         </p>
-        <div className="bg-primaryGradient inline text-white md:text-lg font-para py-2.5 px-6 rounded-full w-full">
+        <AnchorLink href="#contact" className="bg-primaryGradient inline text-white md:text-lg font-para py-2.5 px-6 rounded-full w-full">
           Innovate Digitally
-        </div>
+        </AnchorLink>
       </div>
       <div className="hero-svg hidden md:block basis-[45%]">
         <img

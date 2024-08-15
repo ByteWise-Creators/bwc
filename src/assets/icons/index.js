@@ -4,9 +4,9 @@ import uiUx from "./brush.svg";
 import fullStack from "./code-slash.svg";
 import frontEnd from "./layout-wtf.svg";
 import backEnd from "./terminal.svg";
-import crossPF from "./crossplatform-1.svg"
+import crossPF from "./crossplatform-1.svg";
 
-const services = [
+export const services = [
   {
     title: "Android App Development",
     description:
@@ -51,4 +51,33 @@ const services = [
   },
 ];
 
-export default services;
+export const aboutAnime = [
+  {
+    title: "Android",
+    image: android,
+  },
+  {
+    title: "iOS",
+    image: iOS,
+  },
+  {
+    title: "Cross-Platform",
+    image: crossPF,
+  },
+  {
+    title: "Full-Stack",
+    image: fullStack,
+  },
+  {
+    title: "Front-End",
+    image: frontEnd,
+  },
+  {
+    title: "Backend",
+    image: backEnd,
+  },
+  {
+    title: "UI/UX",
+    image: uiUx,
+  },
+];

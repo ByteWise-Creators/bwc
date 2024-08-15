@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import titleSvg from "../assets/Svg/title-svg.svg";
 import ServiceCard from "../components/ServiceCard";
-import services from "../assets/icons";
+import { services } from "../assets/icons";
 
 
 const Service = ({ updateService }) => {
@@ -10,11 +10,11 @@ const Service = ({ updateService }) => {
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex flex-col items-center gap-7 mb-12">
           {/* Title */}
-          <div className="relative w-[70%] md:w-[40%] lg:w-[30%] xl:w-[26%] mx-auto text-center">
+          <div className="relative w-[70%] smm:w-[50%] sm:w-[45%] md:w-[32%] lg:w-[25%] xl:w-[22%] mx-auto text-center">
             <h1 className="text-5xl font-bold relative z-[1] font-heading">Services</h1>
             <img
               src={titleSvg}
-              className="absolute h-[90px] w-[90px] top-[-20px] right-[30px]"
+              className="absolute h-[90px] w-[90px] top-[-28px] right-0"
             />
           </div>
           <p className="text-lg md:text-xl font-para">

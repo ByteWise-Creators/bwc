@@ -5,12 +5,16 @@ import Service from "./pages/Service";
 import MeatUs from "./pages/MeatUs";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footrer";
+import byteWiseLogo from "./assets/mobile-logo/mobilebrand.svg";
+import ByteWiseLoader from "./components/ByteWiseLoader";
 import { useState } from "react";
-import byteWiseLogo from "./assets/mobile-logo/bytewise-creators-m1.svg";
-import "./App.css"
+import "./App.css";
 
 function App() {
   const [service, setService] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
+
+  setTimeout(() => setIsLoading(false), 2000);
 
   const updateService = (e) => {
     typeof e === "string" ? setService(e) : setService(e.target.value);
@@ -18,18 +22,24 @@ function App() {
 
   return (
     <>
-      <div className="px-[4%]">
-        <div className="w-full h-10 pt-7 md:hidden sm:pb-10">
-          <img src={byteWiseLogo} alt="" />
-        </div>
-        <Home />
-        <Navbar />
-        <About />
-        <Service updateService={updateService} />
-        <MeatUs />
-        <Contact service={service} updateService={updateService} />
-      </div>
-      <Footer />
+      {isLoading ? (
+        <ByteWiseLoader />
+      ) : (
+        <>
+          <div id="logo" className="px-[4%]">
+            <div className="w-full h-10 pt-7 md:hidden sm:pb-10">
+              <img src={byteWiseLogo} alt="ByteWiseCreators" />
+            </div>
+            <Home />
+            <Navbar />
+            <About />
+            <Service updateService={updateService} />
+            <MeatUs />
+            <Contact service={service} updateService={updateService} />
+          </div>
+          <Footer />
+        </>
+      )}
     </>
   );
 }

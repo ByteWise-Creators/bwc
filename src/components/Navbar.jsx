@@ -1,7 +1,7 @@
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import byteWiseCreators from "../assets/ByteWise_Creators.png";
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -10,21 +10,26 @@ const Navbar = () => {
     setMenuOpen(!menuOpen);
   };
 
-  const iconVariants = {
-    hidden: { opacity: 0, y: 20, rotate: 120 },
-    visible: { opacity: 1, y: 0, rotate: 0 },
+  const variants = {
+    initial: { y: 50, opacity: 0.5, rotate: 120 },
+    animate: { y: 0, opacity: 1, rotate: 0 },
+    exit: { y: 50, opacity: 0, rotate: 120 },
   };
+
+  const transition = { duration: 0.6, type: "spring" };
 
   return (
     <>
       <section className="min-w-full sticky top-2 hidden items-center justify-center my-[3%] md:flex z-[99]">
         <nav className="bg-secondary w-4/5 flex justify-between items-center p-2 lg:p-3.5 rounded-[100px] shadow-lg">
           <div className="shrink-0">
-            <img
-              src={byteWiseCreators}
-              alt="byteWiseCreators-logo"
-              className="h-14"
-            />
+            <a href="/">
+              <img
+                src={byteWiseCreators}
+                alt="byteWiseCreators-logo"
+                className="h-14"
+              />
+            </a>
           </div>
           <div className="mr-5">
             <ul className="flex justify-center items-center gap-5 lg:gap-10 list-none">
@@ -70,23 +75,18 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
 
-      <div className="fixed bottom-5 right-5 z-50 md:hidden">
-        <motion.div
-          className="flex flex-col gap-4"
-          initial="hidden"
-          animate={menuOpen ? "visible" : "hidden"}
-          transition={{
-            duration: 0.5,
-            type: "spring",
-            stiffness: 400,
-            damping: 40,
-            staggerChildren: 0.15,
-          }}
-        >
-          <AnchorLink href="#home" onClick={toggleMenu}>
+      <AnimatePresence key="ani-pre">
+        {menuOpen && (
+          <AnchorLink href="#logo" onClick={toggleMenu}>
             <motion.div
-              variants={iconVariants}
-              className="w-12 h-12 bg-primaryGradient rounded-full flex items-center justify-center cursor-pointer"
+              key="home"
+              layout
+              variants={variants}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              transition={transition}
+              className="fixed z-10 right-5 bottom-[252px] w-12 h-12 bg-primaryGradient rounded-full flex items-center justify-center cursor-pointer"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -100,11 +100,19 @@ const Navbar = () => {
               </svg>
             </motion.div>
           </AnchorLink>
+        )}
 
+        {menuOpen && (
           <AnchorLink href="#about" onClick={toggleMenu}>
             <motion.div
-              variants={iconVariants}
-              className="w-12 h-12 bg-primaryGradient rounded-full flex items-center justify-center cursor-pointer"
+              key="about"
+              layout
+              variants={variants}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              transition={transition}
+              className="fixed z-10 right-5 bottom-[194px] w-12 h-12 bg-primaryGradient rounded-full flex items-center justify-center cursor-pointer"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -117,11 +125,19 @@ const Navbar = () => {
               </svg>
             </motion.div>
           </AnchorLink>
+        )}
 
+        {menuOpen && (
           <AnchorLink href="#service" onClick={toggleMenu}>
             <motion.div
-              variants={iconVariants}
-              className="w-12 h-12 bg-primaryGradient rounded-full flex items-center justify-center cursor-pointer"
+              key="service"
+              layout
+              variants={variants}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              transition={transition}
+              className="fixed z-10 right-5 bottom-[136px] w-12 h-12 bg-primaryGradient rounded-full flex items-center justify-center cursor-pointer"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -134,11 +150,19 @@ const Navbar = () => {
               </svg>
             </motion.div>
           </AnchorLink>
+        )}
 
+        {menuOpen && (
           <AnchorLink href="#contact" onClick={toggleMenu}>
             <motion.div
-              variants={iconVariants}
-              className="w-12 h-12 bg-primaryGradient rounded-full flex items-center justify-center cursor-pointer"
+              key="contact"
+              layout
+              variants={variants}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              transition={transition}
+              className="fixed z-10 right-5 bottom-[78px] w-12 h-12 bg-primaryGradient rounded-full flex items-center justify-center cursor-pointer"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -154,28 +178,32 @@ const Navbar = () => {
               </svg>
             </motion.div>
           </AnchorLink>
-        </motion.div>
+        )}
+      </AnimatePresence>
 
+      <div
+        className="fixed right-5 z-10 bottom-5 md:hidden w-12 h-12 mt-5 bg-primaryGradient rounded-full flex flex-col gap-1.5 items-center justify-center cursor-pointer"
+        onClick={toggleMenu}
+        key="toogle-menu"
+      >
         <div
-          className="w-12 h-12 mt-5 bg-primaryGradient rounded-full flex flex-col gap-1.5 items-center justify-center cursor-pointer"
-          onClick={toggleMenu}
-        >
-          <div
-            className={`h-1 w-7 bg-white rounded-full transition-transform duration-500 ${
-              menuOpen ? "transform rotate-45 translate-y-2.5" : ""
-            }`}
-          ></div>
-          <div
-            className={`h-1 w-7 bg-white rounded-full transition-opacity duration-500 ${
-              menuOpen ? "opacity-0" : ""
-            }`}
-          ></div>
-          <div
-            className={`h-1 w-7 bg-white rounded-full transition-transform duration-500 ${
-              menuOpen ? "transform -rotate-45 -translate-y-2.5" : ""
-            }`}
-          ></div>
-        </div>
+          key="b-1"
+          className={`h-1 w-7 bg-white rounded-full transition-transform duration-500 ${
+            menuOpen ? "transform rotate-45 translate-y-2.5" : ""
+          }`}
+        ></div>
+        <div
+          key="b-2"
+          className={`h-1 w-7 bg-white rounded-full transition-opacity duration-500 ${
+            menuOpen ? "opacity-0" : ""
+          }`}
+        ></div>
+        <div
+          key="b-3"
+          className={`h-1 w-7 bg-white rounded-full transition-transform duration-500 ${
+            menuOpen ? "transform -rotate-45 -translate-y-2.5" : ""
+          }`}
+        ></div>
       </div>
     </>
   );
