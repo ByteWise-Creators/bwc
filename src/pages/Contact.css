@@ -1,0 +1,43 @@
+:root {
+  --c-1: #ee49fd;
+  --c-2: #6257ff;
+  --blue-300: #93c5fd;
+}
+
+.label-floating {
+  color: white;
+  top: 50%;
+  left: 0.75rem;
+  transform: translateY(-50%);
+  transition: all 0.2s ease-out;
+  pointer-events: none;
+  user-select: none;
+  padding: 0 0.25rem;
+}
+
+.text-area-label {
+  color: white;
+  top: 17%;
+  left: 0.75rem;
+  transform: translateY(-50%);
+  transition: all 0.2s ease-out;
+  pointer-events: none;
+  user-select: none;
+  padding: 0 0.25rem;
+}
+
+.input.has-value + .label-floating,
+.input:focus + .label-floating {
+  top: 10px;
+  transform: translateY(-100%);
+  font-size: 0.75rem;
+  color: var(--blue-300);
+}
+
+.input:not(:focus) + .label-floating {
+  color: #fefefe;
+}
+
+.relative {
+  position: relative;
+}

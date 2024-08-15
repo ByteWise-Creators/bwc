@@ -1,0 +1,3 @@
+.word {
+  will-change: transform, filter, opacity;
+}

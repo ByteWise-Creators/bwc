@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Outfit:wght@100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+.fadeIn {
+  animation: fade-in 0.6s linear;
+}
+
+.fade-grad {
+  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+  -webkit-mask: linear-gradient(
+    90deg,
+    transparent,
+    white 20%,
+    white 80%,
+    transparent
+  );
+}
+
+.w-c {
+  width: max-content;
+}
+
+.animate-scroll {
+  animation: scroll linear infinite;
+}
+
+@keyframes scroll {
+  to {
+    transform: translate(calc(-50%));
+  }
+}
+
+/* contact form */
+.input {
+  @apply bg-secondary font-subHeading w-full px-3 py-2 border border-[#666] font-light tracking-wider rounded focus:outline-none focus:border-blue-300 hover:border-blue-300;
+}
+
+.label-floating {
+  @apply absolute bg-secondary/90 font-subHeading text-sm font-normal;
+}
+
+.text-area-label {
+  @apply absolute text-sm font-normal font-subHeading;
+}
+
+
+/* nav hov */
+
+.ac-hov:hover {
+  font-weight: 500;
+  background: linear-gradient(to bottom right, #6257ff, #ee49fd);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
