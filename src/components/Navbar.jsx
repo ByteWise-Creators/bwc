@@ -23,7 +23,7 @@ const Navbar = () => {
       <section className="min-w-full sticky top-2 hidden items-center justify-center my-[3%] md:flex z-[99]">
         <nav className="bg-secondary w-4/5 flex justify-between items-center p-2 lg:p-3.5 rounded-[100px] shadow-lg">
           <div className="shrink-0">
-            <a href="/">
+            <a href="/bwc/">
               <img
                 src={byteWiseCreators}
                 alt="byteWiseCreators-logo"

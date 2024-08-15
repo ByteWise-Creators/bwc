@@ -51,7 +51,7 @@ const AboutUs = () => {
         </div>
         {/* Text Content */}
         <div className="w-full flex justify-center flex-col gap-2 md:gap-8 px-4 text-justify pt-8 overflow-x-hidden md:flex-row">
-          <p className="text-base md:text-lg leading-relaxed font-para basis-1/2">
+          <p className="text-sm md:text-lg leading-relaxed font-para basis-1/2">
             At ByteWise Creators, we specialize in transforming businesses
             through cutting-edge digital solutions. Our team excels at
             modernizing outdated systems and optimizing inefficient processes to
@@ -59,7 +59,7 @@ const AboutUs = () => {
             digital strategies that integrate the latest technology, streamline
             workflows, and improve customer experiences.
           </p>
-          <p className="text-base md:text-lg leading-relaxed mt-1 font-para basis-1/2">
+          <p className="text-sm md:text-lg leading-relaxed mt-1 font-para basis-1/2">
             By leveraging our expertise, we help businesses stay ahead of the
             competition and unlock new growth opportunities. Partner with us to
             revolutionize your digital landscape and drive success in a rapidly
