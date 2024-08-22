@@ -2,7 +2,7 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Service from "./pages/Service";
-import MeatUs from "./pages/MeatUs";
+import MeetUs from "./pages/MeetUs";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footrer";
 import byteWiseLogo from "./assets/mobile-logo/mobilebrand.svg";
@@ -32,9 +32,9 @@ function App() {
             </div>
             <Home />
             <Navbar />
-            <About />
             <Service updateService={updateService} />
-            <MeatUs />
+            <About />
+            <MeetUs />
             <Contact service={service} updateService={updateService} />
           </div>
           <Footer />

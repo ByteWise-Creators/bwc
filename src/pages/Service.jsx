@@ -6,7 +6,7 @@ import { services } from "../assets/icons";
 
 const Service = ({ updateService }) => {
   return (
-    <section id="service" className="w-full py-14 text-[#fefefe]">
+    <section id="service" className="w-full pt-28 lg:pt-20 pb-14 text-[#fefefe]">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex flex-col items-center gap-7 mb-12">
           {/* Title */}

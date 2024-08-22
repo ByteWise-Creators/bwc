@@ -6,7 +6,7 @@ import hariprasath from "../assets/img/hariprasath.png";
 import arvindh from "../assets/img/arvindh.jpg";
 import titleSvg from "../assets/Svg/title-svg.svg";
 
-const MeatUs = () => {
+const MeetUs = () => {
   return (
     <section className="py-14">
       <div className="max-w-6xl mx-auto px-4">
@@ -58,4 +58,4 @@ const MeatUs = () => {
   );
 };
 
-export default MeatUs;
+export default MeetUs;
