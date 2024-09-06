@@ -3,7 +3,7 @@ import deepakumar from "../assets/img/deepakumar.png";
 import hariharan from "../assets/img/hariharan.png";
 import ajay from "../assets/img/ajay.png";
 import hariprasath from "../assets/img/hariprasath.png";
-import arvindh from "../assets/img/arvindh.jpg";
+import somaprakaasam from "../assets/img/somaprakaasam.png";
 import titleSvg from "../assets/Svg/title-svg.svg";
 
 const MeetUs = () => {
@@ -47,9 +47,9 @@ const MeetUs = () => {
             description="Optimizes operations for improved productivity."
           />
           <ProfileCard
-            imgSrc={arvindh}
-            name="Arvindh V"
-            title="Co-Founder & CSR"
+            imgSrc={somaprakaasam}
+            name="Somaprakaasam G"
+            title="CSR"
             description="Ensures exceptional client service and support."
           />
         </div>
